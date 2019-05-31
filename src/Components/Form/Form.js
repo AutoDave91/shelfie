@@ -6,7 +6,7 @@ class Form extends Component {
         super()
         this.state = {
             image_URL: '',
-            product_name: '',
+            name: '',
             price: 0
         }
         this.onChange = this.onChange.bind(this)
@@ -19,20 +19,31 @@ class Form extends Component {
     render(){
         // console.log('IN FORM', this.state)
         return(
-            <main>
+            <main className='form_container'>
                 <h1>Form</h1>
-                <form onSubmit={e=>{
+                <form className='form' onSubmit={e=>{
                     e.preventDefault();
-                }}>
-                    <section className='inputs'>
+                    axios
+                        .post('/api/product', {
+                            image_URL: this.state.image_URL,
+                            name: this.state.name,
+                            price: this.state.price
+                        })
+                        .then(() =>{
+                            this.props.componentDidMount()})
+                          .catch(error => {
+                            console.log(error);
+                          })}
+                }>
+                    
                         <input name='image_URL' onChange={this.onChange} placeholder='image URL' />
-                        <input name='product_name' onChange={this.onChange} placeholder='product name' />
+                        <input name='name' onChange={this.onChange} placeholder='product name' />
                         <input name='price' type='number' onChange={this.onChange} placeholder='price' />
-                    </section>
-                    <section className='buttons'>
+                    
+                    
                         <button type='reset'>Cancel</button>
                         <button type='submit'>Add to Inventory</button>
-                    </section>
+                    
                 </form>
             </main>
         )

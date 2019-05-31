@@ -15,6 +15,7 @@ massive(process.env.CONNECTION_STRING)
 
 // endpoints
 app.get('/api/inventory', control.getInventory)
+app.post('/api/product', control.addItem)
 
 app.listen(process.env.SERVER_PORT, ()=>{
     console.log(`Listening to port ${process.env.SERVER_PORT}! `, 'Waiting on database...')

@@ -13,11 +13,11 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <main>
-                <h1>Dashboard</h1>
-                {/* {this.props.inventory.map((item, index)=>(
-                <Product key={index} item={item} inventory={this.props.inventory}/>
-                ))} */}
+            <main className='dashboard'>
+                {/* <h1>Dashboard</h1> */}
+                {this.props.inventory.map((item, index)=>(
+                <Product key={index} item={item} />
+                ))}
             </main>
         )
     }

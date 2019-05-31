@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    margin-bottom: 10vh;
+    background-color: #AB2A19;
+}
+
+.body{
+    display: flex;
+}
+.dashboard{
+    width: 40vw;
+    margin-right: 10vw;
+}
+
+.product{
+    display: flex;
+    background-color: #D34735;
+    margin-bottom: 2vh;
+}
+
+.form{
+    display: flex;
+    flex-flow: column;
+    width: 40vw;
+    margin: 5vw;
+}
+.form_container{
+    background-color: #3AD886;
+    height: 45vh;
+}
+
+
+/* https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans */
