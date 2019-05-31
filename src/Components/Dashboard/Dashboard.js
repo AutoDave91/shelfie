@@ -16,7 +16,7 @@ class Dashboard extends Component {
             <main className='dashboard'>
                 {/* <h1>Dashboard</h1> */}
                 {this.props.inventory.map((item, index)=>(
-                <Product key={index} item={item} />
+                <Product key={index} item={item} inventory={this.props.inventory} componentDidMount={this.componentDidMount}/>
                 ))}
             </main>
         )

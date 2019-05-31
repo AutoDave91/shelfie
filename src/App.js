@@ -9,7 +9,8 @@ class App extends Component {
   constructor(){
     super()
     this.state ={
-      inventory:[]
+      inventory:[],
+      selected:[]
     }
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -34,8 +35,8 @@ class App extends Component {
       <main className="App">
           <Header />
           <section className='body'>
-            <Dashboard inventory={inventory}/>
-            <Form componentDidMount = {this.componentDidMount}/>
+            <Dashboard inventory={inventory} componentDidMount={this.componentDidMount}/>
+            <Form componentDidMount = {this.componentDidMount} selected={this.state.selected}/>
           </section>
       </main>
     );

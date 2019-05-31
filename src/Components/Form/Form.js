@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../main.css'
 
 class Form extends Component {
     constructor(){
@@ -41,8 +42,8 @@ class Form extends Component {
                         <input name='price' type='number' onChange={this.onChange} placeholder='price' />
                     
                     
-                        <button type='reset'>Cancel</button>
-                        <button type='submit'>Add to Inventory</button>
+                        <button className='formButts' type='reset'>Cancel</button>
+                        <button className='formButts' type='submit'>Add to Inventory</button>
                     
                 </form>
             </main>

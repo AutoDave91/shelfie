@@ -18,7 +18,30 @@ const addItem = (req, res)=>{
             console.log('ERROR ADDING INVENTORY')
         })
 }
+const deleteItem = (req, res)=>{
+    let db = req.app.get('db');
+    let {id} = req.params;
+
+    db.delete_product(id)
+        .then(()=>res.sendStatus(200))
+        .catch(err =>{
+            res.status(500).send({error: 'Error deleting item.'})
+            console.log('Error deleting')
+        })
+};
+const editItem = (req, res)=>{
+    let db = req.app.get('db');
+    let {id} = req.params;
+    let {desc} = req.query;
+
+    db.edit_product([id, desc])
+        .then(()=>res.sendStatus(200))
+        .catch(err =>{
+            res.status(500).send({error: 'Error editing product.'})
+            console.log('Error editing')
+        })
+};
 
 module.exports={
-    getInventory, addItem
+    getInventory, addItem, deleteItem, editItem
 }
